@@ -18,23 +18,17 @@ client.on('ready', (event) => {
     var repository = req.body.repository.name;
     var branch = req.body.ref.split('refs/heads/')[1];
 
-    // first 3 commits
-    for (var i = 0; i < 2; i++) {
-      var authorName = commits[i].author.name;
-      var message = commits[i].message;
+    commits.forEach((commit) => {
+      var authorName = commit.author.name;
+      var message = commit.message;
 
       client.sendMessage({
         to: process.env.CHANNEL_ID,
-        message: `${repository}: ${branch} ${authorName} ${message}`
+        message: `${repository}/${branch} ${authorName}: ${message}`
       });
-    }
+    });
 
-    if (commits.length - 2 > 0) {
-      client.sendMessage({
-        to: process.env.CHANNEL_ID,
-        message: `${repository}: ${branch} ... and ${commits.length - 2} more`
-      });
-    }
+    res.json({ status: 'ok' });
   });
 
   app.listen(3000);
