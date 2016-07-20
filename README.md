@@ -1,2 +1,2 @@
-# github-discord
+# github-discord-bot
 GitHub Discord bot
