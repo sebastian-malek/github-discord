@@ -19,7 +19,7 @@ client.on('ready', (event) => {
     var branch = req.body.ref.split('refs/heads/')[1];
 
     // first 3 commits
-    for (i = 0; i < 2; i++) {
+    for (var i = 0; i < 2; i++) {
       var authorName = commits[i].author.name;
       var message = commits[i].message;
 
