@@ -1,0 +1,27 @@
+{
+  "name": "github-discord-bot",
+  "version": "1.0.0",
+  "description": "GitHub Discord bot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastian-malek/github-discord-bot.git"
+  },
+  "keywords": [
+    "github",
+    "discord",
+    "bot",
+    "feed",
+    "commits"
+  ],
+  "author": "Sebastian Malek <sebastian.malek.ets@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastian-malek/github-discord-bot/issues"
+  },
+  "homepage": "https://github.com/sebastian-malek/github-discord-bot#readme"
+}
