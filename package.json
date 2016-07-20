@@ -23,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/sebastian-malek/github-discord-bot/issues"
   },
-  "homepage": "https://github.com/sebastian-malek/github-discord-bot#readme"
+  "homepage": "https://github.com/sebastian-malek/github-discord-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "discord.io": "^1.13.4",
+    "express": "^4.14.0"
+  }
 }
