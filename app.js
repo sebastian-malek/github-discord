@@ -11,7 +11,7 @@ var client = new Discord.Client({
 });
 
 client.on('ready', (event) => {
-  console.log(`Logged in to Discord as ${client.username}`);
+  console.log(`logged in to discord as ${client.username}`);
 
   app.post('/github', (req, res) => {
     var commits = req.body.commits;
