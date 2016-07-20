@@ -6,7 +6,7 @@ app.use(bodyParser.json());
 
 var Discord = require('discord.io');
 var client = new Discord.Client({
-  token: process.env.TOKEN | "",
+  token: process.env.TOKEN,
   autorun: true
 });
 
