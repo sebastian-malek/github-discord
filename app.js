@@ -17,21 +17,20 @@ client.on('ready', (event) => {
     var commits = req.body.commits;
     var repository = req.body.repository.name;
     var branch = req.body.ref.split('refs/heads/')[1];
-
     var pusherName = req.body.pusher.name;
 
     client.sendMessage({
       to: process.env.CHANNEL_ID,
       message: `[**${repository}**] ${pusherName} pushed ${commits.length} new commit(s) to ${branch}:`
-    });
+    }, (err, message) => {
+      commits.forEach((commit) => {
+        var authorName = commit.author.name;
+        var message = commit.message;
 
-    commits.forEach((commit) => {
-      var authorName = commit.author.name;
-      var message = commit.message;
-
-      client.sendMessage({
-        to: process.env.CHANNEL_ID,
-        message: `**${repository}**/${branch} ${authorName}: ${message}`
+        client.sendMessage({
+          to: process.env.CHANNEL_ID,
+          message: `**${repository}**/${branch} ${authorName}: ${message}`
+        });
       });
     });
 
